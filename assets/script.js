@@ -46,12 +46,20 @@ function showSlide(index) {
 }
 
 ARROWLEFT.addEventListener('click', () => {
-	currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+	// currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+	currentIndex--;
+	if (currentIndex < 0) {
+		currentIndex = 3;
+	}
 	showSlide(currentIndex);
 });
 
 ARROWRIGHT.addEventListener('click', () => {
-	currentIndex = (currentIndex + 1) % slides.length;
+	// currentIndex = (currentIndex + 1) % slides.length;
+	currentIndex++
+	if (currentIndex > 3) {
+		currentIndex = 0;
+	}
 	showSlide(currentIndex);
 });
 
