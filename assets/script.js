@@ -46,7 +46,6 @@ function showSlide(index) {
 }
 
 ARROWLEFT.addEventListener('click', () => {
-	// currentIndex = (currentIndex - 1 + slides.length) % slides.length;
 	currentIndex--;
 	if (currentIndex < 0) {
 		currentIndex = 3;
@@ -55,7 +54,6 @@ ARROWLEFT.addEventListener('click', () => {
 });
 
 ARROWRIGHT.addEventListener('click', () => {
-	// currentIndex = (currentIndex + 1) % slides.length;
 	currentIndex++
 	if (currentIndex > 3) {
 		currentIndex = 0;
