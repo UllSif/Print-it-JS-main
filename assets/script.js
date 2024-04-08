@@ -37,8 +37,7 @@ function updateDots() {
 
 function showSlide(index) {
 	const slide = slides[index];
-	let currentImg = CAROUSELCONTAINER.src;
-	CAROUSELCONTAINER.src = currentImg.substr(0, currentImg.length - 10) + slide.image;
+	CAROUSELCONTAINER.src = "./assets/images/slideshow/" + slide.image;
 	const tagLine = document.querySelector('#banner p');
 	tagLine.innerHTML = slide.tagLine;
 	currentIndex = index;
@@ -48,14 +47,14 @@ function showSlide(index) {
 ARROWLEFT.addEventListener('click', () => {
 	currentIndex--;
 	if (currentIndex < 0) {
-		currentIndex = 3;
+		currentIndex = slides.length - 1;
 	}
 	showSlide(currentIndex);
 });
 
 ARROWRIGHT.addEventListener('click', () => {
-	currentIndex++
-	if (currentIndex > 3) {
+	currentIndex++;
+	if (currentIndex > slides.length - 1) {
 		currentIndex = 0;
 	}
 	showSlide(currentIndex);
